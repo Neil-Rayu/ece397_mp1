@@ -32,12 +32,10 @@
         let
           pkgs = import nixpkgs { inherit system; };
           target = "thumbv6m-none-eabi";
-          rustToolchain = fenix.packages.${system}.combine [
-            fenix.packages.${system}.complete.toolchain
-            fenix.packages.${system}.targets.${target}.latest.rust-std
-            fenix.packages.${system}.complete.rust-src
-            fenix.packages.${system}.complete.rust-analyzer
-          ];
+          rustToolchain = fenix.packages.${system}.fromToolchainFile {
+            file = ./rust-toolchain.toml;
+            sha256 = "sha256-sqSWJDUxc+zaz1nBWMAJKTAGBuGWP25GCftIOlCEAtA=";
+          };
         in
         {
           default = pkgs.mkShell {

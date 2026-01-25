@@ -6,7 +6,7 @@ Detailed instructions in [syllabus](https://sigpwny.com/2026-ectf-syllabus).
 
 - Install dependencies:
   - Nixos: use flake (`nix develop`) and add [udev rules](https://probe.rs/docs/getting-started/probe-setup/#linux-udev-rules). Otherwise,
-  - Rust nightly
+  - Rustup (should use everything specified in `rust-toolchain.toml`)
   - [probe-rs](https://probe.rs/docs/getting-started/installation/) ([setup instructions](https://probe.rs/docs/getting-started/probe-setup/) include details like udev rules)
   - picocom/PuTTY
 - Connect to UART:
